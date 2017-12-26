@@ -1,7 +1,7 @@
 ### 第二种哈希表
 查找效率为O(1)
 #### 1）两个循环<br>
-时间复杂度O(n),空间复杂度O(n)<br>
+时间复杂度O(n),空间复杂度O(n)，放在LeetCode上测试，发生Unknow Error:worried:<br>
 ##### 思路：
 先通过一个for循环把键和值存入字典中，然后再通过一个for循环计算x=target-x，最后将值进行判断是否存在并且通过FirstOrDefault查找所有KV与满足条件的值比较再提取出键，true则返回，false则抛出错误提示，注意键和键不想等<br><br>
 刚开始我纳闷为什么不用HashTable，百度一查，知道原因了<br>
