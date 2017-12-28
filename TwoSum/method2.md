@@ -32,3 +32,24 @@ public static int[] twoSum(int[] nums, int target)
         }
 ```
 #### 2）单个循环
+时间复杂度和空间复杂度都跟两个循环一样，但是代码量上少了，显得更加简洁<br>
+```C#
+public static int[] twoSum(int[] nums, int target)
+        {
+            if (nums.Length < 2)
+            {
+                throw new Exception();
+            }
+            Dictionary<int, int> dict = new Dictionary<int, int>();
+            for (int i = 0; i <= nums.Length - 1; i++)
+            {
+                dict.Add(i, nums[i]);               
+                int temp = target - nums[i];
+                if (dict.ContainsValue(temp) && dict.FirstOrDefault(q => q.Value == temp).Key != i)
+                {
+                    return new int[] { dict.FirstOrDefault(q => q.Value == temp).Key,i };
+                }
+            }
+            throw new Exception();
+        }
+```
